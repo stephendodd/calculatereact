@@ -1,3 +1,6 @@
+var path = require('path');
+var webpack = require('webpack');
+
 module.exports = {
   entry: './main.js',
   output: {
@@ -11,8 +14,8 @@ module.exports = {
   module: {
     loaders: [
       {
-        test: /\.js$/,
-        exclude: /node_modules/,
+        test: /\.js?$/,
+        exclude: "/node_modules/",
         loader: 'babel',
         query: {
           presets: ['es2015', 'react']

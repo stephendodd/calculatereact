@@ -1,11 +1,43 @@
-import React from 'react';
+var React = require('react');
+var ReactDOM = require('react-dom');
 
-class App extends React.Component {
-  render() {
+var App = React.createClass({
+  render: function() {
     return (
-      <div>Hello world</div>
-    )
+      <div>
+        hi
+        <ButtonController />
+      </div>
+    );
   }
-}
+});
+
+var ButtonController = React.createClass({
+  render: function() {
+    return (
+      <div>Hello</div>
+    );
+  }
+});
+
+var AddButton = React.createClass({
+  render: function() {
+    return (
+      <div>
+        Hi addButton
+      </div>
+    );
+  }
+});
+
+var MinusButton = React.createClass({
+  render: function() {
+    return (
+      <div>
+        Hi Minus
+      </div>
+    );
+  }
+});
 
 export default App
