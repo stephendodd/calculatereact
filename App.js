@@ -15,7 +15,10 @@ var App = React.createClass({
 var ButtonController = React.createClass({
   render: function() {
     return (
-      <div>Hello</div>
+      <div>
+        <AddButton />
+        <MinusButton />
+      </div>
     );
   }
 });
@@ -40,4 +43,4 @@ var MinusButton = React.createClass({
   }
 });
 
-export default App
+module.exports = App
