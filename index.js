@@ -20372,12 +20372,35 @@
 	var App = React.createClass({
 	  displayName: 'App',
 
+
+	  getInitialState: function getInitialState() {
+	    return {
+	      count: 0
+	    };
+	  },
+
+	  countUp: function countUp() {
+	    this.state.count = this.state.count + 1;
+	  },
+
+	  countDown: function countDown() {
+	    console.log("ham");
+	    this.setState({
+	      count: this.state.count - 1
+	    });
+	  },
+
 	  render: function render() {
 	    return React.createElement(
 	      'div',
 	      null,
-	      'hi',
-	      React.createElement(ButtonController, null)
+	      React.createElement(
+	        'button',
+	        { onChange: this.countDown },
+	        'Press me'
+	      ),
+	      React.createElement(ButtonController, null),
+	      this.state.count
 	    );
 	  }
 	});
@@ -20402,7 +20425,11 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      'Hi addButton'
+	      React.createElement(
+	        'button',
+	        null,
+	        'Add button'
+	      )
 	    );
 	  }
 	});
@@ -20414,7 +20441,11 @@
 	    return React.createElement(
 	      'div',
 	      null,
-	      'Hi Minus'
+	      React.createElement(
+	        'button',
+	        { onChange: this.props.addFunction },
+	        'Minus button'
+	      )
 	    );
 	  }
 	});
